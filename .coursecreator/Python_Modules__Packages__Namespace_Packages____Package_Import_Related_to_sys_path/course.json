@@ -1,0 +1,61 @@
+{
+  "environment" : "unittest",
+  "summary" : "Created: May 2, 2020, 3:51:31 PM.\nGenerally, modular programming is an effort to group code into 'logical' blocks. Loosely, 'logical' can defined many different ways, but grouping code starts from just breaking down monolithic code that is difficult to maintain or test. Modules that capture related behavior improves code readability (grok'ing), maintenance and testability. Modular code can additionally be packaged in ways that allow them to be shared among projects both private and public.\n\nThis tutorial, as a foundation, introduces Python's modular programming building blocks (modules, packages (including namespace packages) and explains Python's runtime mechanics of ingesting (importing) those building blocks. Based on that foundation, the tutorial offers a reasoned (opinionated!) way to structure a Python project's modular source and test code.\n\nThe 'reasoned' structure strives to achieve modularity goals, use sane importation practices that avoid programmatic alteration of sys.path yet allow for script execution (including test code) to discover modular packages in cogently predictable ways.\n\nThis tutorial does NOT elaborate on what makes for a 'good', testable, distributable package.  After this tutorial on the modular building blocks and how Python's importation mechanics work, you will have a much better base to start your packaging rationalization.",
+  "title" : "Python Modules, Packages, Namespace Packages, & Package Import Related to sys.path",
+  "authors" : [
+    "Greg Kedge"
+  ],
+  "programming_language" : "Python",
+  "language" : "en",
+  "course_type" : "PyCharm",
+  "items" : [
+    {
+      "title" : "Tutorial Introduction",
+      "items" : [
+        {
+          "title" : "lesson1",
+          "task_list" : [
+            {
+              "name" : "task1",
+              "files" : {
+                "tests/test_task.py" : {
+                  "name" : "tests/test_task.py",
+                  "placeholders" : [ ],
+                  "is_visible" : false,
+                  "text" : "import unittest\n\nfrom ..task import sum\n\n\n# todo: replace this with an actual test\nclass TestCase(unittest.TestCase):\n    def test_add(self):\n        self.assertEqual(sum(1, 2), 3, msg=\"adds 1 + 2 to equal 3\")\n"
+                },
+                "__init__.py" : {
+                  "name" : "__init__.py",
+                  "placeholders" : [ ],
+                  "is_visible" : false,
+                  "text" : ""
+                },
+                "tests/__init__.py" : {
+                  "name" : "tests/__init__.py",
+                  "placeholders" : [ ],
+                  "is_visible" : false,
+                  "text" : ""
+                },
+                "task.py" : {
+                  "name" : "task.py",
+                  "placeholders" : [ ],
+                  "is_visible" : true,
+                  "text" : "# todo: replace this with an actual task\ndef sum(a, b):\n    return a + b\n"
+                }
+              },
+              "description_text" : "This is a task description file. Its content will be displayed to a learner in the **Task Description** window.\n\nIt supports both Markdown and HTML.\nTo toggle the format, you can rename **task.md** to **task.html**, or vice versa.\nThe default task description format can be changed in **Preferences | Tools | Education**, but this will not affect any existing task description files.\n\nThe following features are available in **task.md/task.html** which are specific to the EduTools plugin:\n\n- Hints can be added anywhere in the task text. Type \"hint\" and press Tab. <div class=\"hint\">Text of your hint</div>\n\n- You can insert shortcuts in the task description.\nWhile **task.html/task.md** is open, right-click anywhere on the **Editor** tab and choose the **Insert shortcut** option from the context menu.\nFor example: &shortcut:FileStructurePopup;.\n\n- Insert the &percnt;`IDE_NAME`&percnt; macro, which will be replaced by the actual IDE name.\nFor example, **%IDE_NAME%**.\n\n- Insert PSI elements, by using links like `<a href=\"psi_element://link.to.element\">element description</a>`.\nTo get such a link, right-click the class or method and select **Copy Reference**. Then press &shortcut:EditorPaste; to insert the link where appropriate.\nFor example, a <a href=\"psi_element://java.lang.String#contains\">link to the \"contains\" method</a>.",
+              "description_format" : "MD",
+              "feedback_link" : {
+                "link_type" : "STEPIK"
+              },
+              "task_type" : "edu"
+            }
+          ],
+          "type" : "lesson"
+        }
+      ],
+      "type" : "section"
+    }
+  ],
+  "version" : 11
+}
